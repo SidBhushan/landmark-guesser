@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landmarks</title>
+    <style>
+        body {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="result"></h1>
+    <a href="index.html"><h1>Restart</h1></a>
+    <script>
+        const data = [
+            {
+                name: "Sagrada Familia",
+                lat: 41.4036
+            },
+            {
+                name: "Himeji Castle",
+                lat: 34.8394
+            },
+            {
+                name: "Fallingwater",
+                lat: 35.2057
+            }
+        ]
+
+        let url = new URL(window.location.href)
+        let id = Number(url.searchParams.get('id'))
+        
+        document.getElementById('result').innerText = `The answer was ${data[id].name}`
+    </script>
+</body>
+</html>

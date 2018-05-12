@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Landmarks</title>
+</head>
+<body>
+    <button onclick='start()'>Click Here to Start</button>
+    <script>
+        const data = [
+            {
+                name: "Sagrada Familia",
+                lat: 41.4036
+            },
+            {
+                name: "Himeji Castle",
+                lat: 34.8394
+            },
+            {
+                name: "Fallingwater",
+                lat: 35.2057
+            }
+        ]
+
+        function start() {
+            // TODO: Get a place
+            let id = Math.floor(Math.random() * data.length)
+            console.log(id)
+            let place = {
+                lat: data[id].lat,
+                id: id
+            }    
+            location.assign(`map.html?lat=${place.lat}&id=${place.id}`)
+        }
+    </script>
+</body>
+</html>
